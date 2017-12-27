@@ -47,7 +47,7 @@
                 <li>{!! HTML::link('/logout', 'Logout', array('class' => 'fa fa-sign-out fa-fw')) !!}</li>
                 @else
                     <li><a href="auth/login" class="">Sign in</a></li>
-                    <li><a href="http://chat.local/register" class="">Registration</a></li>
+                    <li><a href="http://chat.loc/register" class="">Registration</a></li>
                 @endif
                 <li id="hello"></li>
             </ul>
@@ -67,7 +67,7 @@
 {{ Html::script('js/jquery-1.11.1.min.js') }}
 {{ Html::script('js/bootstrap.min.js') }}
 <script>
-    var conn = new WebSocket('ws://chat.local:8080');
+    var conn = new WebSocket('ws://chat.loc:8080');
     conn.onopen = function (e) {
         var hello = document.getElementById('hello');
         hello.innerHTML = 'New connection';
@@ -76,12 +76,12 @@
         var hello = document.getElementById('chat_list');
         hello.innerHTML = '<span> user: user@email </span><p>' + e.data +'</p>';
 
-        //concole.log("Get data: " + e.data);
+        console.log("Get data: " + e.data);
     }
     function send() {
         var data =  document.getElementById('msg').value;
         conn.send(data);
-        //concole.log('Sended: ' + data);
+        //console.log('Sended: ' + data);
     }
 </script>
 </body>
