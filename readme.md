@@ -14,10 +14,6 @@
 - зашедшему пользователю присваивается случайный цвет его ник-нейма и цвету сообщения (подобрать список цветов, чтобы текст не сливался с фоном)
 - требование к ник-нейму - минимум 3 символа, запрет спец.символов
 
-
-
-# to start you may run several command
-
 *Create virtual host: 
 - /etc/hosts (add new link 127.0.0.1)
 - cp & edit chat.conf /etc/apache2/site-available/chat.conf
@@ -26,6 +22,8 @@
 - chmod -R 755 /path/chat.loc
 - chown -R www-data:www-data /path/chat.loc
 
+
+# To start you may run several command
 *Run server
-php artisan serve
-php artisan chat_server:serve (to start websokets)
+- php artisan serve
+- php artisan chat_server:serve (to start websokets)
