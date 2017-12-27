@@ -1,19 +1,18 @@
-# Требуется реализовать чат на веб-сокетах:
+# Required to implement the chat on web sockets:
 
-Требования:
-- обмен данными чата должен работать через веб-сокеты
-- мгновенная регистрация (при авторизации, если пользователя в нашей бд не существует - создать)
-- фронтенд собрать с использованием twitter bootstrap или zurb fundation (на выбор разработчика)
-- интерфейс должен быть респонсивным и изменяться под мобильное устройство
-- внешний вид интерфейса на усмотрение разработчика
-- бэкенд сделать на фреймворке yii2/laravel5 (на выбор)
-- администратор чата (пользователь с соответствующим свойством в бд), должен иметь возможность отключать или банить пользователя
-- структуру бд создать миграцями
-- создать первого пользователя (админа) с произвольным логином и паролем через миграции (или фикстуры/сиды)
-- ограничения сообщений - до 200 символов в 1 сообщении, 15 секунд между сообщениями одного пользователя
-- зашедшему пользователю присваивается случайный цвет его ник-нейма и цвету сообщения (подобрать список цветов, чтобы текст не сливался с фоном)
-- требование к ник-нейму - минимум 3 символа, запрет спец.символов
-
+Requirements:
+- the exchange of chat data should work through web sockets
+- instant registration (for authorization, if the user does not exist in our database - create one)
+- Collect the frontend using twitter bootstrap or zurb fundation (at the developer's choice)
+- the interface should be responsive and change for mobile device
+- the appearance of the interface at the discretion of the developer
+- make the backend on the yii2 / laravel5 framework (to choose from)
+- the administrator of the chat (the user with the corresponding property in the database), should be able to disable or ban the user
+- the structure of the database to create migrations
+- create the first user (administrator) with arbitrary login and password through migrations (or fixtures / seats)
+- number of messages - up to 200 characters in 1 message, 15 seconds between messages of the same user
+- the incoming user is assigned a random color of his nickname and the color of the message (choose a list of colors so that the text does not merge with the background)
+- requirement for nickname - at least 3 characters, prohibition of special characters
 
 # To start:
 - php artisan serve
