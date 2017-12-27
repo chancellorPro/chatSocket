@@ -1,4 +1,4 @@
-# Chat on web sockets: (Ratchet)
+# Chat on web sockets: (laravel & Ratchet)
 
 Requirements:
 - The exchange of chat data should work through web sockets
