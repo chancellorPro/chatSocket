@@ -28,6 +28,7 @@
 - chmod -R 755 /path/chat.loc
 - chown -R www-data:www-data /path/chat.loc
 
+```
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
         ServerName  chat.loc
@@ -56,3 +57,4 @@
         LogLevel warn
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
+```
