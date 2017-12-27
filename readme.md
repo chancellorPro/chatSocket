@@ -1,4 +1,5 @@
-#Требуется реализовать чат на веб-сокетах:
+# Требуется реализовать чат на веб-сокетах:
+
 Требования:
 - обмен данными чата должен работать через веб-сокеты
 - мгновенная регистрация (при авторизации, если пользователя в нашей бд не существует - создать)
@@ -12,3 +13,19 @@
 - ограничения сообщений - до 200 символов в 1 сообщении, 15 секунд между сообщениями одного пользователя
 - зашедшему пользователю присваивается случайный цвет его ник-нейма и цвету сообщения (подобрать список цветов, чтобы текст не сливался с фоном)
 - требование к ник-нейму - минимум 3 символа, запрет спец.символов
+
+
+
+# to start you may run several command
+
+*Create virtual host: 
+- /etc/hosts (add new link 127.0.0.1)
+- cp & edit chat.conf /etc/apache2/site-available/chat.conf
+- a2ensite chat.conf
+- service apache2 restart
+- chmod -R 755 /path/chat.loc
+- chown -R www-data:www-data /path/chat.loc
+
+*Run server
+php artisan serve
+php artisan chat_server:serve (to start websokets)
