@@ -1,4 +1,4 @@
-# Required to implement the chat on web sockets:
+# Chat on web sockets: (Ratchet)
 
 Requirements:
 - The exchange of chat data should work through web sockets
