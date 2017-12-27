@@ -14,7 +14,13 @@
 - зашедшему пользователю присваивается случайный цвет его ник-нейма и цвету сообщения (подобрать список цветов, чтобы текст не сливался с фоном)
 - требование к ник-нейму - минимум 3 символа, запрет спец.символов
 
-*Create virtual host: 
+
+# To start:
+- php artisan serve
+- php artisan chat_server:serve (to start websokets)
+
+
+# Create virtual host: 
 - /etc/hosts (add new link 127.0.0.1)
 - cp & edit chat.conf /etc/apache2/site-available/chat.conf
 - a2ensite chat.conf
@@ -22,8 +28,31 @@
 - chmod -R 755 /path/chat.loc
 - chown -R www-data:www-data /path/chat.loc
 
-
-# To start you may run several command
-*Run server
-- php artisan serve
-- php artisan chat_server:serve (to start websokets)
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName  chat.loc
+        DocumentRoot /home/itdev/projects/chat/public
+	<Directory />
+            Options FollowSymLinks
+            AllowOverride None
+        </Directory>
+        <Directory /home/itdev/projects/chat/>
+                Options FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+		Require all granted
+       </Directory>
+        ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+        <Directory "/usr/lib/cgi-bin">
+                AllowOverride None
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Order allow,deny
+                Allow from all
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/chat.error.log
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
